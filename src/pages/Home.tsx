@@ -16,7 +16,14 @@ const Home = () => {
           placeholder="Artist / Album / Title"
           onChange={(input: any) => setSearch(input.target.value)}
         />
-        <Link to="/result" state={{ search: search }} className="button">
+        <Link
+          to={{
+            pathname: "/result",
+            search: search && `?sort=${search}`,
+          }}
+          state={{ search: search }}
+          className="button"
+        >
           Search
         </Link>
       </div>

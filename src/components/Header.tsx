@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="header flex sticky top-0 justify-between items-center h-[60px] p-[22px] bg-gradient-to-r from-[#712bda] to-[#a45deb] rounded-curve shadow-header">
+      <div className="header flex sticky top-0 justify-between items-center h-[60px] p-[22px] bg-gradient-to-r from-[#712bda] to-[#a45deb] rounded-curve shadow-header z-50">
         <ul className="w-full flex justify-between">
           <li>
             <Link to="/" className="flex items-center -mt-[5px]">
@@ -22,7 +22,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <img src={ngMusic} alt="ngMusic logo" />
+            <Link to="/result">
+              <img src={ngMusic} alt="ngMusic logo" />
+            </Link>
           </li>
           <li>
             <div
