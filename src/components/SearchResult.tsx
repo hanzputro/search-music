@@ -4,7 +4,7 @@ type resultType = {
 
 const SearchResult = ({ value }: resultType) => {
   return (
-    <div className="py-[37px] flex justify-center items-end">
+    <div className="pt-[37px] flex justify-center items-end">
       <p className="flex font-roboto text-sm text-gray tracking-[0.5px] mr-[10px]">
         Search result for:
       </p>
