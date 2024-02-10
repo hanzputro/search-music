@@ -48,6 +48,16 @@ const Result = () => {
     }),
   };
 
+  const notFoundVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+      },
+    },
+  };
+
   const handleGetItems = () => {
     setIsLoading(true);
     setTimeout(() => {
@@ -104,7 +114,17 @@ const Result = () => {
       </div>
 
       <div className="w-full max-w-[600px] mx-auto mb-[20px] flex justify-center">
-        {items?.results?.length ? <LoadMore /> : "Search Not Found!"}
+        {items?.results?.length ? (
+          <LoadMore />
+        ) : (
+          <motion.h3
+            variants={notFoundVariants}
+            initial="initial"
+            animate="animate"
+          >
+            Search Not Found!
+          </motion.h3>
+        )}
       </div>
     </div>
   );
