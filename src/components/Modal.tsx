@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
@@ -15,11 +15,6 @@ const backdrop = {
 
 const Modal = ({ showModal, setShowModal }: modalType) => {
   const [search, setSearch] = useState("");
-  const inputRef = useRef<any>(null);
-
-  useEffect(() => {
-    setSearch(inputRef.current);
-  }, [search]);
 
   return (
     <AnimatePresence mode="wait">
@@ -47,12 +42,16 @@ const Modal = ({ showModal, setShowModal }: modalType) => {
               <input
                 className="input"
                 placeholder="Artist / Album / Title"
-                ref={inputRef}
+                onChange={(input: any) => setSearch(input.target.value)}
               />
               <Link
-                to="/result"
+                to={{
+                  pathname: "/result",
+                  search: search && `?sort=${search}`,
+                }}
                 state={{ search: search }}
                 className="button-purple"
+                onClick={() => setShowModal(!showModal)}
               >
                 Search
               </Link>
