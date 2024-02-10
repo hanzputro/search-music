@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+#root {
+  @apply min-h-[100vh];
+}
+
+@layer components {
+  .input {
+    @apply text-center h-[40px] p-[12px] rounded-[20px] bg-[#fff] font-roboto text-xs font-semibold tracking-[0.43px] text-blue-gray/500 outline-none;
+  }
+  .button {
+    @apply h-[40px] p-[12px] rounded-[20px] bg-[#ffffff33] hover:bg-[#ffffff10] font-roboto text-sm font-medium tracking-[0.5px] text-[#fff] outline-none text-center;
+  }
+  .button-gray {
+    @apply h-[34px] px-[29px] py-[10px] rounded-[17px] bg-[#e2e8f0] hover:bg-[#dfeaf9] font-roboto text-xs font-semibold tracking-[0.43px] text-blue-gray/500 outline-none;
+  }
+  .button-purple {
+    @apply h-[40px] p-[12px] rounded-[20px] bg-gradient-to-r from-[#712bda] to-[#a45deb] hover:from-[#a45deb] hover:to-[#a45deb] font-roboto text-xs text-center font-semibold tracking-[0.43px] text-[#fff] outline-none;
+  }
+  .tag {
+    @apply font-roboto font-bold text-[10px] text-[#fff] rounded-[10px] px-[13px] py-[2px] bg-green;
+  }
+}
